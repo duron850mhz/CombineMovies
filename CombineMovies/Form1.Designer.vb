@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         lblFfmpeg = New Label()
         txtFfmpeg = New TextBox()
         txtCommandline = New TextBox()
@@ -54,35 +55,36 @@ Partial Class Form1
         ' txtCommandline
         ' 
         txtCommandline.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        txtCommandline.Location = New Point(138, 41)
+        txtCommandline.Location = New Point(138, 70)
         txtCommandline.Name = "txtCommandline"
+        txtCommandline.ReadOnly = True
         txtCommandline.Size = New Size(378, 23)
-        txtCommandline.TabIndex = 3
+        txtCommandline.TabIndex = 7
         ' 
         ' lblCommandline
         ' 
         lblCommandline.AutoSize = True
-        lblCommandline.Location = New Point(12, 44)
+        lblCommandline.Location = New Point(13, 73)
         lblCommandline.Name = "lblCommandline"
         lblCommandline.Size = New Size(67, 15)
-        lblCommandline.TabIndex = 2
+        lblCommandline.TabIndex = 6
         lblCommandline.Text = "コマンドライン"
         ' 
         ' txtTargetfolder
         ' 
         txtTargetfolder.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        txtTargetfolder.Location = New Point(138, 70)
+        txtTargetfolder.Location = New Point(138, 41)
         txtTargetfolder.Name = "txtTargetfolder"
         txtTargetfolder.Size = New Size(378, 23)
-        txtTargetfolder.TabIndex = 5
+        txtTargetfolder.TabIndex = 4
         ' 
         ' lblTargetfolder
         ' 
         lblTargetfolder.AutoSize = True
-        lblTargetfolder.Location = New Point(12, 73)
+        lblTargetfolder.Location = New Point(13, 44)
         lblTargetfolder.Name = "lblTargetfolder"
         lblTargetfolder.Size = New Size(66, 15)
-        lblTargetfolder.TabIndex = 4
+        lblTargetfolder.TabIndex = 3
         lblTargetfolder.Text = "対象フォルダ"
         ' 
         ' brnRefFfmpeg
@@ -91,17 +93,17 @@ Partial Class Form1
         brnRefFfmpeg.Location = New Point(520, 11)
         brnRefFfmpeg.Name = "brnRefFfmpeg"
         brnRefFfmpeg.Size = New Size(25, 23)
-        brnRefFfmpeg.TabIndex = 6
+        brnRefFfmpeg.TabIndex = 2
         brnRefFfmpeg.Text = "..."
         brnRefFfmpeg.UseVisualStyleBackColor = True
         ' 
         ' btnRefTargetfolder
         ' 
         btnRefTargetfolder.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnRefTargetfolder.Location = New Point(520, 69)
+        btnRefTargetfolder.Location = New Point(520, 40)
         btnRefTargetfolder.Name = "btnRefTargetfolder"
         btnRefTargetfolder.Size = New Size(25, 23)
-        btnRefTargetfolder.TabIndex = 7
+        btnRefTargetfolder.TabIndex = 5
         btnRefTargetfolder.Text = "..."
         btnRefTargetfolder.UseVisualStyleBackColor = True
         ' 
@@ -127,6 +129,7 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
+        AllowDrop = True
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(553, 155)
@@ -140,6 +143,7 @@ Partial Class Form1
         Controls.Add(lblCommandline)
         Controls.Add(txtFfmpeg)
         Controls.Add(lblFfmpeg)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "Form1"
         Text = "ffmpegを使ってaviファイルを結合するやつ"
         ResumeLayout(False)
